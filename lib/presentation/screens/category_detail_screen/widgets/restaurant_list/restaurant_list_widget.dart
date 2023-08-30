@@ -113,7 +113,7 @@ class _RestaurantListWidgetState extends State<RestaurantListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    var size = MediaQuery.sizeOf(context);
     print("restaurant list widget build");
     return BlocProvider(
       create: (context) => _restaurantListBloc,
@@ -221,10 +221,11 @@ class _RestaurantListWidgetState extends State<RestaurantListWidget> {
                                                                     .start,
                                                             children: [
                                                               Container(
-                                                                margin: const EdgeInsets
+                                                                margin:
+                                                                    const EdgeInsets
                                                                         .only(
-                                                                    right:
-                                                                        17.5),
+                                                                        right:
+                                                                            17.5),
                                                                 width: 3,
                                                                 color: selectedFilterIndex ==
                                                                         i
@@ -233,10 +234,11 @@ class _RestaurantListWidgetState extends State<RestaurantListWidget> {
                                                                         .transparent,
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsets
+                                                                padding:
+                                                                    const EdgeInsets
                                                                         .symmetric(
-                                                                    vertical:
-                                                                        20),
+                                                                        vertical:
+                                                                            20),
                                                                 child: Text(
                                                                   filterSectionList[
                                                                       i],
@@ -267,7 +269,7 @@ class _RestaurantListWidgetState extends State<RestaurantListWidget> {
                                                 padding: const EdgeInsets.only(
                                                     left: 15),
                                                 child: Scrollbar(
-                                                  showTrackOnHover: true,
+                                                  trackVisibility: true,
                                                   radius:
                                                       const Radius.circular(12),
                                                   child: SingleChildScrollView(
@@ -697,9 +699,9 @@ class _RestaurantListWidgetState extends State<RestaurantListWidget> {
                     likeBtnCallback: () {},
                   );
                 },
-                noItemsFoundIndicatorBuilder: (context) => Row(
+                noItemsFoundIndicatorBuilder: (context) => const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Padding(
                       padding: EdgeInsets.only(bottom: 20),
                       child: Text("No restaurants found"),

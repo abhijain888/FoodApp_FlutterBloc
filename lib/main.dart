@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider(
+          lazy: false,
           create: (_) => MainScreenRepository(),
         ),
         RepositoryProvider(
@@ -28,10 +29,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(),
-        home: RepositoryProvider(
-          create: (context) => MainScreenRepository(),
-          child: const MainScreen(),
-        ),
+        home:
+            const MainScreen(), // RepositoryProvider widget removed from Main screen
       ),
     );
   }

@@ -1,7 +1,6 @@
 import 'package:food_app_bloc/data/data_providers/category_detailscreen_provider.dart';
 import 'package:food_app_bloc/data/models/cuisine_model.dart';
 import 'package:food_app_bloc/data/models/filter_list_model.dart';
-
 import '../../values.dart';
 import '../models/restaurant_model.dart';
 import '../models/store__offer_model.dart';
